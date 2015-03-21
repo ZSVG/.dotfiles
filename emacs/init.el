@@ -53,8 +53,11 @@
 ;;; Disable indent-tabs-mod
 (setq-default indent-tabs-mode nil)
 
-;;; Enable spellchecking in comments and strings
+;;; Enable spellcheck
+(setq ispell-program-name "aspell")
 (add-hook 'emacs-lisp-mode-hook 'flyspell-prog-mode)
+(add-hook 'TeX-mode-hook 'flyspell-mode)
+(add-hook 'LaTeX-mode-hook 'flyspell-buffer)
 
 ;;; Highlight current line
 (global-hl-line-mode 1)
@@ -101,17 +104,8 @@
 ;;; Enable line numbering in LaTeX modes
 (add-hook 'LaTeX-mode-hook 'linum-mode)
 
-;;; Enable spellchecking
-(add-hook 'TeX-mode-hook 'flyspell-mode)
-
 ;;; Disable auto-fill for a proper one-sentence-per-line work flow
 (add-hook 'LaTeX-mode-hook 'turn-off-auto-fill)
-
-;;; Use Okular as default viewer
-(setq TeX-view-program-selection
- '((output-pdf "PDF Viewer")))
-(setq TeX-view-program-list
- '(("PDF Viewer" "okular --unique %o#src:%n%b")))
 
 ;;; Emacs Speaks Statistics ;;;
 (require 'ess-site)
