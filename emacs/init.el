@@ -38,6 +38,10 @@
 ;;; Unique buffer name
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
+;;; Window numbering
+(require 'window-number)
+(window-number-mode)
+(window-number-meta-mode)
 
 ;;; EDITING ;;;
 ;;; Disable indent-tabs-mod
