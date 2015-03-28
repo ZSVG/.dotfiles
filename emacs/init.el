@@ -7,7 +7,6 @@
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize) ;; You might already have this line
 
-
 ;;; INTERFACE ;;;
 
 ;;; Appropros
@@ -23,6 +22,9 @@
 
 ;;; Enable visible bell
 (setq visible-bell t)
+
+;;; Font
+(set-frame-font "Droid Sans Mono-10" nil t)
 
 ;;; Mouse yanking
 (setq mouse-yank-at-point t)
@@ -105,7 +107,7 @@
 (add-hook 'LaTeX-mode-hook 'linum-mode)
 
 ;;; Disable auto-fill for a proper one-sentence-per-line work flow
-(add-hook 'LaTeX-mode-hook 'turn-off-auto-fill)
+(add-hook 'LaTeX-mode-hook 'turn-off-auto-fill)'
 
 ;;; Emacs Speaks Statistics ;;;
 (require 'ess-site)
