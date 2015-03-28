@@ -111,3 +111,9 @@
 
 ;;; Emacs Speaks Statistics ;;;
 (require 'ess-site)
+
+;;; EMMS
+
+(require 'emms-setup)
+(emms-all)
+(emms-default-players)
