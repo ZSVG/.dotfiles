@@ -8,77 +8,61 @@
 (package-initialize) ;; You might already have this line
 
 ;;; INTERFACE ;;;
-
 ;;; Appropros
 (setq apropos-do-all t)
-
 ;;; Change backup directory
 (setq save-place-file (concat user-emacs-directory "places")
   backup-directory-alist `(("." . ,(concat user-emacs-directory
     "backups"))))
-
 ;;; Enable line numbering in programming modes
 (add-hook 'prog-mode-hook 'linum-mode)
-
 ;;; Enable visible bell
 (setq visible-bell t)
-
 ;;; Font
 (set-frame-font "Droid Sans Mono-10" nil t)
-
 ;;; Mouse yanking
 (setq mouse-yank-at-point t)
-
 ;;; Remove menu and toolbar
 (menu-bar-mode -1)
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))
 (when (fboundp 'scroll-bar-mode)
   (scroll-bar-mode -1))
-
 ;;; Return to last location after save
 (require 'saveplace)
 (setq-default save-place t)
-
 ;;; Show parentheses mode
 (show-paren-mode 1)
-
 ;;; Theme
 (load-theme 'monokai t)
-
 ;;; Unique buffer name
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
 ;;; EDITING ;;;
-
 ;;; Disable indent-tabs-mod
 (setq-default indent-tabs-mode nil)
-
 ;;; Enable spellcheck
 (setq ispell-program-name "aspell")
 (add-hook 'emacs-lisp-mode-hook 'flyspell-prog-mode)
 (add-hook 'TeX-mode-hook 'flyspell-mode)
 (add-hook 'LaTeX-mode-hook 'flyspell-buffer)
-
 ;;; Highlight current line
 (global-hl-line-mode 1)
-
 ;;; Rebind searches
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
 (global-set-key (kbd "C-M-s") 'isearch-forward)
 (global-set-key (kbd "C-M-r") 'isearch-backward)
-
 ;;; Require final newline
 (setq require-final-newline t)
-
 ;;; Share clipboard with other application
 (setq x-select-enable-clipboard t)
 (setq x-select-enable-primary t)
 (setq save-interprogram-paste-before-kill t)
 
-;;; Helm
+;;; Helm ;;;
+;;; Basic config
 (package-initialize)
 (setq default-frame-alist '((vertical-scroll-bars . nil)
                             (tool-bar-lines . 0)
@@ -96,24 +80,23 @@
 (unless (boundp 'completion-in-region-function)
   (define-key lisp-interaction-mode-map [remap completion-at-point] 'helm-lisp-completion-at-point)
   (define-key emacs-lisp-mode-map       [remap completion-at-point] 'helm-lisp-completion-at-point))
+;;; Swap buffer change command
+(global-set-key (kbd "C-x b") 'helm-buffers-list)
 
 ;;; LANGUAGES ;;;
 
 ;;; AucTeX ;;;
 ;;; Compile PDFs by default
 (setq TeX-PDF-mode t)
-
 ;;; Enable line numbering in LaTeX modes
 (add-hook 'LaTeX-mode-hook 'linum-mode)
-
 ;;; Disable auto-fill for a proper one-sentence-per-line work flow
 (add-hook 'LaTeX-mode-hook 'turn-off-auto-fill)'
 
 ;;; Emacs Speaks Statistics ;;;
 (require 'ess-site)
 
-;;; EMMS
-
+;;; EMMS ;;;
 (require 'emms-setup)
 (emms-all)
 (emms-default-players)
