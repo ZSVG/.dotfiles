@@ -1,4 +1,7 @@
-;; PACKAGE MANAGEMENT ;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;; Package Management ;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
@@ -7,7 +10,10 @@
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize) ;; You might already have this line
 
-;; INTERFACE ;;
+;;;;;;;;;;;;;;;
+;; Interface ;;
+;;;;;;;;;;;;;;;
+
 ;; Appropros
 (setq apropos-do-all t)
 ;; Automatically reload files in Doc-View
@@ -45,7 +51,10 @@
 (window-number-mode)
 (window-number-meta-mode)
 
-;; EDITING ;;
+;;;;;;;;;;;;;
+;; Editing ;;
+;;;;;;;;;;;;;
+
 ;; Disable indent-tabs-mod
 (setq-default indent-tabs-mode nil)
 ;; Enable spellcheck
@@ -83,13 +92,15 @@
 (define-key global-map [remap list-buffers] 'helm-buffers-list)
 (define-key global-map [remap dabbrev-expand] 'helm-dabbrev)
 (global-set-key (kbd "M-x") 'helm-M-x)
-(unless (boundp 'completion-in-region-function)
+(unless (boundp 'completion-in-region-function) 
   (define-key lisp-interaction-mode-map [remap completion-at-point] 'helm-lisp-completion-at-point)
   (define-key emacs-lisp-mode-map       [remap completion-at-point] 'helm-lisp-completion-at-point))
 ;; Swap buffer change command
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 
-;; LANGUAGES ;;
+;;;;;;;;;;;;;;;
+;; Languages ;;
+;;;;;;;;;;;;;;;
 
 ;; AucTeX ;;
 ;; Compile PDFs by default
