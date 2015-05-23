@@ -113,8 +113,12 @@
 ;; Emacs Speaks Statistics ;;
 (require 'ess-site)
 
+;;;;;;;;;;;
+;; Media ;;
+;;;;;;;;;;;
+
 ;; EMMS ;;
 (require 'emms-setup)
 (emms-all)
 (emms-default-players)
-(emms-source-file-default-directory "~/Music/")
+(setq emms-source-file-default-directory "~/Music/")
