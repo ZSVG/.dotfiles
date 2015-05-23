@@ -117,3 +117,4 @@
 (require 'emms-setup)
 (emms-all)
 (emms-default-players)
+(emms-source-file-default-directory "~/Music/")
