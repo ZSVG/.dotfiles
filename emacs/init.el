@@ -127,6 +127,13 @@
      (require 'emms-playing-time)
      (emms-playing-time 0)
 
+;;;;;;;;;;;;;;;
+;; Messaging ;;
+;;;;;;;;;;;;;;;
+(require 'erc-image)
+(add-to-list 'erc-modules 'image)
+(erc-update-modules)
+
 ;;;;;;;;;;;;;;
 ;; Org-Mode ;;
 ;;;;;;;;;;;;;;
