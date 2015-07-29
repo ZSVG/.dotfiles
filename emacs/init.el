@@ -130,6 +130,24 @@
 ;;;;;;;;;;;;;;;
 ;; Messaging ;;
 ;;;;;;;;;;;;;;;
+
+;; Bitlbee ;;
+(require 'bitlbee)
+(defun bitlbee-instant-message ()
+  (interactive)
+  (erc :server "localhost" :port 6667 :nick "carl"))
+
+;; ERC ;;
+;; Check spelling
+(erc-spelling-mode 1)
+
+;; Track notifications
+(erc-track-mode t)
+(setq erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE" "324" "329" "332" "333" "353" "477"))
+;; Hide these
+(setq erc-hide-list '("JOIN" "PART" "QUIT" "NICK"))
+
+;; Display images
 (require 'erc-image)
 (add-to-list 'erc-modules 'image)
 (erc-update-modules)
