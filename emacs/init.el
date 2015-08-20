@@ -30,6 +30,9 @@
 (set-frame-font "Droid Sans Mono-10" nil t)
 ;; Mouse yanking
 (setq mouse-yank-at-point t)
+;; Perspective (workspaces)
+(require 'perspective)
+(persp-mode)
 ;; Remove menu and toolbar
 (menu-bar-mode -1)
 (when (fboundp 'tool-bar-mode)
@@ -103,7 +106,6 @@
 ;;;;;;;;;;
 
 ;; RSS ;;
-
 (add-to-list 'gnus-secondary-select-methods '(nntp "news.gwene.org"))
 
 ;;;;;;;;;;;;;;;
