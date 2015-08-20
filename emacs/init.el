@@ -98,6 +98,14 @@
 ;; Swap buffer change command
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 
+;;;;;;;;;;
+;; Gnus ;;
+;;;;;;;;;;
+
+;; RSS ;;
+
+(add-to-list 'gnus-secondary-select-methods '(nntp "news.gwene.org"))
+
 ;;;;;;;;;;;;;;;
 ;; Languages ;;
 ;;;;;;;;;;;;;;;
