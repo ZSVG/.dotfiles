@@ -150,17 +150,22 @@
 ;; ERC ;;
 ;; Check spelling
 (erc-spelling-mode 1)
-
 ;; Track notifications
 (erc-track-mode t)
 (setq erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE" "324" "329" "332" "333" "353" "477"))
 ;; Hide these
 (setq erc-hide-list '("JOIN" "PART" "QUIT" "NICK"))
-
 ;; Display images
 (require 'erc-image)
 (add-to-list 'erc-modules 'image)
 (erc-update-modules)
+
+;; Twittering-Mode
+(require 'twittering-mode)
+;; Display icons
+(setq twittering-icon-mode t)
+;; Check spelling in tweets
+(add-hook 'twittering-edit-mode-hook (lambda () (ispell-minor-mode) (flyspell-mode)))
 
 ;;;;;;;;;;;;;;
 ;; Org-Mode ;;
