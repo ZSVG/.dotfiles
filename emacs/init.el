@@ -27,7 +27,7 @@
 ;; Enable visible bell
 (setq visible-bell t)
 ;; Font
-(set-frame-font "Droid Sans Mono-10" nil t)
+(set-frame-font "Source Code Pro-10" nil t)
 ;; Mouse yanking
 (setq mouse-yank-at-point t)
 ;; Perspective (workspaces)
