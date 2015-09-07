@@ -150,6 +150,8 @@
   (erc :server "localhost" :port 6667 :nick "carl"))
 
 ;; ERC ;;
+;; Bury new buffers (prevent them from popping up on connecting)
+(setq erc-join-buffer 'bury)
 ;; Check spelling
 (erc-spelling-mode 1)
 ;; Track notifications
