@@ -33,6 +33,8 @@
 ;; Perspective (workspaces)
 (require 'perspective)
 (persp-mode)
+;; Prompt before closing Emacs
+(setq confirm-kill-emacs 'y-or-n-p)
 ;; Remove menu and toolbar
 (menu-bar-mode -1)
 (when (fboundp 'tool-bar-mode)
