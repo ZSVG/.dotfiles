@@ -3,9 +3,25 @@
 // You can preserve your code in this area when generating the init file using GUI.
 // Put all your code except special key, set*key, hook, blacklist.
 // ========================================================================= //
-//{{%PRESERVE%
-// Put your codes here
-//}}%PRESERVE%
+key.setViewKey('e', function (aEvent, aArg) {
+    ext.exec("hok-start-foreground-mode", aArg);
+}, 'Hok - Foreground hint mode', true);
+
+key.setViewKey('E', function (aEvent, aArg) {
+    ext.exec("hok-start-background-mode", aArg);
+}, 'HoK - Background hint mode', true);
+
+key.setViewKey(';', function (aEvent, aArg) {
+    ext.exec("hok-start-extended-mode", aArg);
+}, 'HoK - Extented hint mode', true);
+
+key.setViewKey(['C-c', 'C-e'], function (aEvent, aArg) {
+    ext.exec("hok-start-continuous-mode", aArg);
+}, 'Start continuous HaH', true);
+
+key.setViewKey('c', function (aEvent, aArg) {
+    ext.exec("hok-yank-foreground-mode", aArg);
+}, 'Hok - Foreground yank hint mode', true);
 // ========================================================================= //
 
 // ========================= Special key settings ========================== //
